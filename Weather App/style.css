@@ -1,0 +1,142 @@
+:root {
+  /* Background */
+  --main-background-light: rgb(47, 150, 163);
+  --main-button-light: rgb(48, 154, 168);
+  --main-background-dark: rgb(48, 62, 143);
+  /* Button */
+  --main-button-mid: rgb(48, 105, 143);
+  --main-button-dark: rgb(31, 40, 94);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(
+    var(--main-background-light),
+    var(--main-background-dark)
+  );
+  /* background: var(--main-button-mid); */
+  font-family: sans-serif;
+  color: white;
+}
+
+.weather-loading {
+  width: 55%;
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.city-container {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  height: 5vh;
+}
+
+.city-search {
+  border: none;
+  padding: 0.5rem;
+  outline: none;
+  background: white;
+}
+
+.location,
+.temperature {
+  height: 30vh;
+  width: 40%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.temperature {
+  flex-direction: column;
+}
+
+.degree-section {
+  display: flex;
+  align-items: center;
+}
+
+.degree-section span {
+  margin: 1rem;
+  font-size: 1.5rem;
+}
+
+.degree-section h2 {
+  font-size: 2rem;
+}
+
+.weather.loading {
+  visibility: hidden;
+  max-height: 20px;
+  position: relative;
+}
+
+.weather.loading::after {
+  visibility: visible;
+  content: "Loading...";
+  color: white;
+  position: absolute;
+  top: 0;
+  left: 20px;
+}
+
+.weather-icon {
+  height: 20vh;
+  width: 20vh;
+}
+
+.units {
+  width: 40%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.inactive {
+  margin: 2rem 1.5rem;
+  width: 5rem;
+  height: 2rem;
+  font-size: 1em;
+  border-radius: 5em;
+  border: none;
+  outline: none;
+  background: var(--main-button-mid);
+  box-shadow: -1.5px -1.5px 5px var(--main-button-light),
+    1.5px 1.5px 5px var(--main-button-dark);
+  font-family: Montserrat, sans-serif;
+  color: #ffffff;
+  cursor: pointer;
+  transition: 0.5s all ease;
+}
+
+.active {
+  margin: 2rem 1.5rem;
+  width: 5rem;
+  height: 2rem;
+  font-size: 1em;
+  border-radius: 5em;
+  border: none;
+  outline: none;
+  background: var(--clr-med);
+  box-shadow: -1.5px -1.5px 5px var(--main-button-light),
+    1.5px 1.5px 5px var(--main-button-dark),
+    -1.5px -1.5px 5px var(--main-button-light),
+    inset 1.5px 1.5px 5px var(--main-button-dark);
+  font-family: Montserrat, sans-serif;
+  color: #ffffff;
+  transition: 0.5s all ease;
+}
